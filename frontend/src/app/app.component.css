@@ -1,0 +1,83 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  section {
+    display: table;
+  }
+  
+.example-label {
+display: table-cell;
+font-size: 14px;
+margin-left: 8px;
+min-width: 120px;
+}
+
+.example-button-row {
+display: table-cell;
+max-width: 600px;
+}
+
+.example-button-row .mat-mdc-button-base {
+margin: 8px 8px 8px 0;
+}
+
+.example-flex-container {
+display: flex;
+justify-content: space-between;
+flex-wrap: wrap;
+}
+
+.example-button-container {
+display: flex;
+justify-content: center;
+width: 120px;
+}
+
+.custom_btn {
+    margin-left: 10px;
+}
+
+body{
+    background-color: #1b1616;
+}
+
+.saved_notes_title{
+    color: white;
+    margin: 10px;
+    margin-top: 2%;
+    font-size: 40px;
+
+}
+
+.saved_notes{
+    color: white;
+}
+
+.demo-table {
+  width: 100%;
+}
+
+.mat-mdc-row .mat-mdc-cell {
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
+}
+
+.mat-mdc-row:hover .mat-mdc-cell {
+  border-color: currentColor;
+}
+
+.demo-row-is-clicked {
+  font-weight: bold;
+}
+
+mat-icon{
+  cursor: pointer;
+}
+
+.edit{
+  color: rgb(20, 20, 139);
+}
+
+.delete{
+  color: red;
+}

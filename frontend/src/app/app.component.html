@@ -1,0 +1,55 @@
+<body>
+  <p>
+    <mat-toolbar>
+      <span>Take Note</span>
+    </mat-toolbar>
+  </p>
+  
+  <button class="custom_btn" mat-raised-button color="primary" (click)="openDialog()">Add Note</button>
+
+  <!-- <h1 class="saved_notes_title">Saved Notes:</h1>
+  <ul class="saved_notes">
+    <li *ngFor="let note of notes">
+      <button mat-button color="warn"  (click)="openNote(note)">{{note.title}}</button>
+    </li>
+  </ul> -->
+  <hr>
+  <div class="container-fluid">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+      <!-- Position Column -->
+      <ng-container matColumnDef="Title">
+        <th mat-header-cell *matHeaderCellDef>Title</th>
+        <td mat-cell *matCellDef="let element"><button (click)="openNote(element)"  mat-raised-button>{{element.title}}</button></td>
+      </ng-container>
+    
+      <!-- Name Column -->
+      <ng-container matColumnDef="Date Created">
+        <th mat-header-cell *matHeaderCellDef>Date Created</th>
+        <td mat-cell *matCellDef="let element">{{element.createdon}}</td>
+      </ng-container>
+    
+      <!-- Weight Column -->
+      <ng-container matColumnDef="Date Modified">
+        <th mat-header-cell *matHeaderCellDef>Date Modified</th>
+        <td mat-cell *matCellDef="let element">{{element.timelastmodified}}</td>
+      </ng-container>
+    
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="Tools">
+        <th mat-header-cell *matHeaderCellDef>Tools</th>
+        <td mat-cell *matCellDef="let element"><mat-icon class="edit" (click)="modifyNotes(element)">edit</mat-icon> <mat-icon class="delete" (click)="deleteNote(element.id, element.title)">delete_forever</mat-icon> <mat-icon (click)="openNote(element)">remove_red_eye</mat-icon></td>
+      </ng-container>
+    
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr
+          mat-row
+          (click)="clickedRows.add(row)"
+          [class.demo-row-is-clicked]="clickedRows.has(row)"
+          *matRowDef="let row; columns: displayedColumns;"
+      ></tr>
+    </table>
+
+  </div>
+</body>
+
+
